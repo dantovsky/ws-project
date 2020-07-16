@@ -4,7 +4,7 @@ import urllib
 from s4api.graphdb_api import GraphDBApi
 from s4api.swagger import ApiClient
 from django.shortcuts import render
-from .models import Book
+from .models import Book, Comment
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
@@ -355,6 +355,8 @@ def book_details(request, book_id):
         }
     """
 
+    # Searching book
+
     payload_query = {"query": query}
     res = accessor.sparql_select(body=payload_query, repo_name=repo_name)
     res = json.loads(res)
@@ -365,7 +367,11 @@ def book_details(request, book_id):
                     average_rating=e['rating']['value'], pub_year=e['pub_year']['value'],
                     ratings_count=e['ratings_count']['value'])
 
-    return render(request, 'booksguru/bookDetails.html', {'book': book})
+    # Searching comments for this book
+
+    comments = Comment.objects.filter(book_id=book_id)
+
+    return render(request, 'booksguru/bookDetails.html', {'book': book, 'comments': comments})
 
 
 def terms(request):

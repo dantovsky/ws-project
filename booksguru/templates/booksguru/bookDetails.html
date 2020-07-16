@@ -45,6 +45,21 @@
 							</p>
 						</div>
 					</div>
+                    <div class="comments">
+                        <h3>Comments about this book</h3>
+                        <div style="color: whitesmoke">
+                            {% if comments %}
+                                {% for comment in comments %}
+                                    <div class="comment">
+                                        <h4>{{ comment.name }}</h4>
+                                        <p>{{ comment.comment }}</p>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                <h4>There are no comments for this book.</h4>
+                            {% endif %}
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</div>

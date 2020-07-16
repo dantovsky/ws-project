@@ -43,3 +43,20 @@ footer {
     background-position: center;
     background-size: contain;
 }
+
+/* Books Detais */
+
+.comments h3 {
+    color: #f5b50a;
+    margin-bottom: 25px;
+}
+
+.comments .comment {
+    margin-bottom: 15px;
+    background-color: #f5b50a59;
+    padding: 15px;
+}
+
+.comments .comment h4 {
+    margin-bottom: 5px;
+}

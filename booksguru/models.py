@@ -25,3 +25,10 @@ class Book(models.Model):
         return self.title
 
 
+class Comment(models.Model):
+    book_id = models.IntegerField(default=0)
+    name = models.CharField(max_length=75)
+    comment = models.TextField(max_length=400)
+
+    def __str__(self):
+        return  self.name
