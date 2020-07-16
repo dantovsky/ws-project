@@ -53,17 +53,11 @@
 							<a href="#page-top"></a>
 						</li>
                         <li><a href="{% url 'index' %}">Home</a></li>
-						<li class="dropdown first">
-							<a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" data-hover="dropdown">
-							browse<i class="fa fa-angle-down" aria-hidden="true"></i>
-							</a>
-							<ul class="dropdown-menu level1">
-                                <li><a href="{% url 'show_books' %}">Explore</a></li>
-								<li><a href="{% url 'most_recent' %}">New Releases</a></li>
-                                <li><a href="{% url 'most_popular' %}">Most popular</a></li>
-								<li class="it-last"><a href="{% url 'top_rated' %}">Top rated Books</a></li>
-							</ul>
-						</li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'show_books' %}">Explore</a></li>
+                        <li><a href="{% url 'most_recent' %}">New Releases</a></li>
+                        <li><a href="{% url 'most_popular' %}">Most popular</a></li>
+                        <li class="it-last"><a href="{% url 'top_rated' %}">Top rated Books</a></li>
 					</ul>
 				</div>
 			<!-- /.navbar-collapse -->
@@ -192,7 +186,8 @@
 	<div class="container">
 		<div class="flex-parent-ft">
 			<div class="flex-child-ft item1">
-				 <a href="{% url 'index' %}"><img class="logo" src="{% static 'style/images/logo1.png' %}" alt="Logo Books Guru"></a>
+                <h4>Books Guru</h4>
+{#				 <a href="{% url 'index' %}"><img class="logo" src="{% static 'style/images/book.png' %}" alt="Logo Books Guru"></a>#}
 				 <p>Campus Universitário de Santiago<br>
 				    3810-193 Aveiro<br>
                      Portugal</p>
