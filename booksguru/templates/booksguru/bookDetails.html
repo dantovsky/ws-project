@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% extends "booksguru/index.html" %}
+<html class="ie ie7 no-js" lang="en-US">
+<html class="ie ie8 no-js" lang="en-US">
+<html lang="en" class="no-js">
+{% load static %}
+
+<head>
+	<!-- Basic need -->
+	<title>{% block title %}{{ book.title }}{% endblock %}</title>
+
+</head>
+<body>
+
+{% block main %}
+<div class="hero mv-single-hero">
+	<div class="container">
+		<div class="row">
+		</div>
+	</div>
+</div>
+<div class="page-single movie-single movie_single">
+	<div class="container">
+		<div class="row ipad-width2">
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="movie-img sticky-sb">
+					<img src="{{book.image_url}}" alt="{{book.title}}">
+					<div class="movie-btn">
+						<div class="btn-transform transform-vertical">
+							<div><a href="{{ book.image_url }}" class="item item-1 yellowbtn"> <i class="ion-card"></i>Open Image</a></div>
+							<div><a href="{{ book.image_url }}" class="item item-2 yellowbtn"><i class="ion-card"></i></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				<div class="movie-single-ct main-content">
+					<h1 class="bd-hd">{{book.title}} <span>year: {{book.pub_year | floatformat}}</span></h1>
+					<h2 class="authors mb-3">AUTHORS: {{book.authors}}</h2>
+					<div class="movie-rate">
+						<div class="rate">
+							<i class="ion-android-star"></i>
+							<p><span>{{book.average_rating}}</span> / 5<br>
+								<span class="rv">{{book.ratings_count}} reviews</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+</body>
+</html>
