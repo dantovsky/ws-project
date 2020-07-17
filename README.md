@@ -13,6 +13,13 @@ Aplicação sobre livros (books)
 
 ## Running this project
 
+It's needed execute commands to prepare the BD:
+
+```
+python3 manage.py makemigrations
+python3 manage.py migrate
+```
+
 Inside the root folder run the command:
 
 ```
