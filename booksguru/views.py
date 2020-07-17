@@ -7,19 +7,13 @@ from django.shortcuts import render, redirect
 from .models import Book, Comment
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-# Novos
+# Imports from new implementations
 from .forms import SignUpForm
-from django.contrib.auth import get_user_model  # acho del
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import logout
+from django.http import HttpResponse, HttpResponseBadRequest
 
-# from django.contrib.auth.decorators import login_required
-# from django.views.generic import TemplateView
-# from django.contrib.auth.mixins import LoginRequiredMixin
-
-import sys
-sys.setrecursionlimit(1500)
 
 endpoint = "http://localhost:7200"
 repo_name = "booksguru"
@@ -396,20 +390,6 @@ def about(request):
     return render(request, 'booksguru/about.html')
 
 
-# def register(response):  # delete
-#     """ Page to register new users """
-#     if response.method == "POST":
-#         form = RegisterForm(response.POST)
-#         if form.is_valid():
-#             form.save()
-#
-#         return redirect("/")
-#     else:
-#         form = RegisterForm()
-#
-#     return render(response, "registration/register.html", {"form": form})
-
-
 def signup(request):
     print('\n\nEntrou no signup')
     """ Signup page to register new users """
@@ -428,7 +408,23 @@ def signup(request):
     return render(request, 'registration/signup.html', {'form': form})
 
 
-# def logoutsss(request):
-#     if request.method == "POST":
-#         logout(request)
-#         redirect('index_raw')
+def post_comments_controller(request, book_id):
+    from .forms import CommentForm
+
+    comment_form = CommentForm(request.POST or None)
+    # print(comment_form.errors)
+    # print(request.POST)
+
+    if comment_form.is_valid():
+        print('\nO form é valido!\n')
+        comment_obj = comment_form.save(commit=False)
+        comment_obj.book_id = book_id
+        comment_obj.name = request.user.first_name + ' ' + request.user.last_name
+        comment_obj.save()
+        # return HttpResponse("Done")
+        return redirect('/booksguru/Book/' + book_id)
+    else:
+        print('\nO form não é valido!\n')
+        return HttpResponseBadRequest()
+        # return None
+        # return redirect('/booksguru/Book/' + book_id)

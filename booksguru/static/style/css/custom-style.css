@@ -1,7 +1,11 @@
 /* ~ ~ ~ Custom ~ ~ ~ */
 
 .light {
-    color: whitesmoke;
+    color: floralwhite;
+}
+
+.gray {
+    color: gray;
 }
 
 .gold {
@@ -97,4 +101,10 @@ footer {
 
 .title-hd .form-group label, .title-hd .form-group ul li {
     color: beige !important;
+}
+
+/* Login page */
+label.control-label {
+    color: white;
+    margin-top: 12px;
 }

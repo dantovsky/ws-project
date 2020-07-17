@@ -1,7 +1,6 @@
 from django.db import models
 import datetime
 
-
 class Book(models.Model):
     book_id = models.IntegerField(default=0)
     good_reads_book_id = models.IntegerField(default=0)
@@ -27,8 +26,9 @@ class Book(models.Model):
 
 class Comment(models.Model):
     book_id = models.IntegerField(default=0)
-    name = models.CharField(max_length=75)
-    comment = models.TextField(max_length=400)
+    name = models.CharField(max_length=75, default='Guest')
+    comment = models.TextField(max_length=400, default='New comment...')
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
         return  self.name

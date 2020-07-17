@@ -15,8 +15,7 @@ urlpatterns = [
     path('booksguru/About', views.about, name='about'),
     path('booksguru/Terms', views.terms, name='terms'),
     path('booksguru/', views.index, name='index'),
-    path("signup/", views.signup, name="signup"),  # <-- new
+    path("signup/", views.signup, name="signup"),
     path('accounts/', include('django.contrib.auth.urls')),
-    # path("register/", views.register, name="register"),  # <-- new (deletar esta)
-    # path("accounts/logout/", views.logout, name="logout"),  # <-- new
+    path('post_comment/<str:book_id>', views.post_comments_controller, name='post_comment'),
 ]

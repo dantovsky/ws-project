@@ -37,10 +37,18 @@ Now, you can access one of these links:
   https://docs.djangoproject.com/en/3.0/ref/templates/builtins/
 - Django Authentication Video Tutorial
   https://github.com/sibtc/django-auth-tutorial-example
+- Django - always getting False in form.is_valid()
+  https://groups.google.com/forum/#!topic/django-users/z5EjU2-RgtU
 
-## Andamento das modificações
+## New Implementations for "Recurso" Epoc
 
-- Adicionar campo de comentário dos livros
-- Ao iniciar página de detalhe, é buscado os comentários para este livro.
+- Added route do "/" for better user experience
+- Improved the graphical style of the website.
+- Working with models, forms, views, urls and templates
+- Added admin.sites
+- Created system to login, logout and register users
+- Welcome message to the user
+- Add comment for a book, only for logged in users
+- When load a book details page, the system get all comments tho actual book, from BD
 
-User passes padrão: userpass2020
+Default user passwords: userpass2020
