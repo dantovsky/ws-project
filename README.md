@@ -52,7 +52,7 @@ Now, you can access one of these links:
 - Added route do "/" for better user experience
 - Improved the graphical style of the website.
 - Working with models, forms, views, urls and templates
-- Added admin.sites
+- Use of Django Admin do register Models (admin.sites.register(ModelName)
 - Created system to login, logout and register users
 - Welcome message to the user
 - Add comment for a book, only for logged in users
