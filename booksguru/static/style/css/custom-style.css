@@ -1,5 +1,26 @@
 /* ~ ~ ~ Custom ~ ~ ~ */
 
+.light {
+    color: whitesmoke;
+}
+
+.gold {
+    color: #f5b50a;
+}
+
+.welcome {
+    color: whitesmoke;
+    align-self: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+button.btn.btn-primary {
+    margin-top: 15px;
+}
+
 .tabs .mv-img img {
   width: 162px !important;
 }
@@ -39,7 +60,7 @@ header img.logo {
 }
 
 footer {
-    background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url(../images/uploads/ft-bg.jpg) repeat;
+    background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8) ), url(../images/uploads/ft-bg.jpg) repeat;
     background-position: center;
     background-size: contain;
 }
@@ -59,4 +80,21 @@ footer {
 
 .comments .comment h4 {
     margin-bottom: 5px;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient( rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8) ), url('../images/uploads/books-and-cats.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Modal */
+
+.modal {
+    overflow: initial;
+}
+
+.title-hd .form-group label, .title-hd .form-group ul li {
+    color: beige !important;
 }

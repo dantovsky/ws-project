@@ -3,10 +3,23 @@ import urllib
 
 from s4api.graphdb_api import GraphDBApi
 from s4api.swagger import ApiClient
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Book, Comment
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
+# Novos
+from .forms import SignUpForm
+from django.contrib.auth import get_user_model  # acho del
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import logout
+
+# from django.contrib.auth.decorators import login_required
+# from django.views.generic import TemplateView
+# from django.contrib.auth.mixins import LoginRequiredMixin
+
+import sys
+sys.setrecursionlimit(1500)
 
 endpoint = "http://localhost:7200"
 repo_name = "booksguru"
@@ -379,6 +392,43 @@ def terms(request):
 
 
 def about(request):
+    """ About page """
     return render(request, 'booksguru/about.html')
 
 
+# def register(response):  # delete
+#     """ Page to register new users """
+#     if response.method == "POST":
+#         form = RegisterForm(response.POST)
+#         if form.is_valid():
+#             form.save()
+#
+#         return redirect("/")
+#     else:
+#         form = RegisterForm()
+#
+#     return render(response, "registration/register.html", {"form": form})
+
+
+def signup(request):
+    print('\n\nEntrou no signup')
+    """ Signup page to register new users """
+    form = SignUpForm(request.POST)
+    if form.is_valid():
+        print('Form é válido')
+        form.save()
+        username = form.cleaned_data.get('username')
+        password = form.cleaned_data.get('password1')
+        user = authenticate(username=username, password=password)
+        login(request, user)
+        print('Antes do return')
+        return redirect('index_raw')
+    else:
+        form = SignUpForm()
+    return render(request, 'registration/signup.html', {'form': form})
+
+
+# def logoutsss(request):
+#     if request.method == "POST":
+#         logout(request)
+#         redirect('index_raw')

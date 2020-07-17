@@ -59,7 +59,14 @@
                         <li><a href="{% url 'most_popular' %}">Most popular</a></li>
                         <li class="it-last"><a href="{% url 'top_rated' %}">Top rated Books</a></li>
 					</ul>
+                    {% if user.is_authenticated %}
+                        <span class="welcome">Welcome {{ user.first_name }}!!! (<a class="welcome pointer" href="{% url 'logout' %}"><span class="gold">Logout</span></a>)</span>
+                    {% else %}
+                        <a class="welcome pointer" href="{% url 'login' %}"><span class="gold">Login</span>&nbsp;</a>
+                        <a class="welcome pointer" href="{% url 'signup' %}">| <span class="gold">Signup</span></a>
+                    {% endif %}
 				</div>
+
 			<!-- /.navbar-collapse -->
 	    </nav>
 

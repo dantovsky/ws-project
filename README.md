@@ -2,7 +2,7 @@
 
 Aplicação sobre livros (books)
 
-## Prerequisits before running the project
+## Pre-requisits before running the project
 
 - GraphDB
     - Create a repository named "booksguru"
@@ -35,8 +35,12 @@ Now, you can access one of these links:
   https://www.youtube.com/watch?v=Vu1T0ozz6Og&list=PLSEiuYkICmDlpZSpWSsPjNAQhKh-raIiu
 - Built-in template tags and filters
   https://docs.djangoproject.com/en/3.0/ref/templates/builtins/
+- Django Authentication Video Tutorial
+  https://github.com/sibtc/django-auth-tutorial-example
 
 ## Andamento das modificações
 
 - Adicionar campo de comentário dos livros
 - Ao iniciar página de detalhe, é buscado os comentários para este livro.
+
+User passes padrão: userpass2020
