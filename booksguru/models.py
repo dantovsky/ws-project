@@ -1,6 +1,7 @@
 from django.db import models
 import datetime
 
+
 class Book(models.Model):
     book_id = models.IntegerField(default=0)
     good_reads_book_id = models.IntegerField(default=0)
@@ -31,4 +32,4 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
-        return  self.name
+        return self.name

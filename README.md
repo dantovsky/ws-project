@@ -1,6 +1,8 @@
-# Web Semântica - Trabalho 1
+# Web Semântica - Trabalho 1 (Época de Recurso)
 
-Aplicação sobre livros (books)
+Book store application developed in Python3 and using SPARQL and GraphDB to deal with RDF graph data.
+
+![Book store for Web Samantic Academic Work](screenshot.png)
 
 ## Pre-requisits before running the project
 
@@ -9,7 +11,8 @@ Aplicação sobre livros (books)
     - import books.csv using Tabular(OntoRefine)
     - on isbn13 column make Edit cells >> Transform and put the value: value.replace(".", "").replace("e+12", "0")
 - Python3
-    - s4api package
+    - pip install s4api
+    - pip install django-crispy-forms
 
 ## Running this project
 
@@ -46,16 +49,21 @@ Now, you can access one of these links:
   https://github.com/sibtc/django-auth-tutorial-example
 - Django - always getting False in form.is_valid()
   https://groups.google.com/forum/#!topic/django-users/z5EjU2-RgtU
+- Installing django-crispy-forms
+  https://django-crispy-forms.readthedocs.io/en/latest/install.html
+- s4api 1.1.0
+  https://pypi.org/project/s4api/
 
 ## New Implementations for "Recurso" Epoc
 
 - Added route do "/" for better user experience
-- Improved the graphical style of the website.
+- Improved the graphical style of the website
 - Working with models, forms, views, urls and templates
-- Use of Django Admin do register Models (admin.sites.register(ModelName)
+- Using Django Admin by registering models (admin.sites.register (ModelName))
 - Created system to login, logout and register users
 - Welcome message to the user
 - Add comment for a book, only for logged in users
+- Use of the SQlite3 database, in addition to GraphDB
 - When load a book details page, the system get all comments tho actual book, from BD
 
 Default user passwords: userpass2020

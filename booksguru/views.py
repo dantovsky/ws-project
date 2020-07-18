@@ -10,8 +10,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Imports from new implementations
 from .forms import SignUpForm
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import logout
+# from django.contrib.auth.forms import UserCreationForm
+# from django.contrib.auth import logout
 from django.http import HttpResponse, HttpResponseBadRequest
 
 
@@ -23,6 +23,7 @@ numb_results_per_page = 18
 
 
 def index(request):
+    """ This function runs three queries to return a set of book to show on home page. """
     top_recent = []
     popular = []
     best_rated = []
@@ -96,6 +97,7 @@ def index(request):
 
 
 def search_books(request):
+    """ Query used to searching books. """
     books = list()
     identifier = request.POST.get('search', None)
     type_identifier = request.POST.get('select', 'book')
@@ -194,7 +196,7 @@ def search_books(request):
 
 
 def show_books(request):
-
+    """ Query to show all books. """
     books = list()
     page = request.GET.get('page', 1)
     query = """
@@ -230,7 +232,7 @@ def show_books(request):
 
 
 def most_recent(request):
-
+    """ Query for most recent books. """
     books = list()
     page = request.GET.get('page', 1)
 
@@ -268,6 +270,7 @@ def most_recent(request):
 
 
 def top_rated(request):
+    """ Query for top rated books. """
     books = list()
     page = request.GET.get('page', 1)
 
@@ -304,6 +307,7 @@ def top_rated(request):
 
 
 def most_popular(request):
+    """ Query for most popular books. """
     books = list()
     page = request.GET.get('page', 1)
 
@@ -341,11 +345,12 @@ def most_popular(request):
 
 
 def error(request):
+    """ This function to return  a 404 page not found. """
     return render(request, 'booksguru/404.html',)
 
 
 def book_details(request, book_id):
-
+    """ This function get all information about one book, from your ID catched on URL. """
     book = None
     query = """
         PREFIX books:<http://books.com/resource/>
@@ -374,7 +379,7 @@ def book_details(request, book_id):
                     average_rating=e['rating']['value'], pub_year=e['pub_year']['value'],
                     ratings_count=e['ratings_count']['value'])
 
-    # Searching comments for this book
+    # Searching comments for one book
 
     comments = Comment.objects.filter(book_id=book_id)
 
@@ -401,7 +406,6 @@ def signup(request):
         password = form.cleaned_data.get('password1')
         user = authenticate(username=username, password=password)
         login(request, user)
-        print('Antes do return')
         return redirect('index_raw')
     else:
         form = SignUpForm()
@@ -409,6 +413,7 @@ def signup(request):
 
 
 def post_comments_controller(request, book_id):
+    """ Allow a user post a comment for a book. """
     from .forms import CommentForm
 
     comment_form = CommentForm(request.POST or None)
