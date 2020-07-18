@@ -43,15 +43,15 @@ Now, you can access one of these links:
   https://www.youtube.com/watch?v=YFb7hnZNLdQ
 - Webinar GraphDB 9.1 Knowledge graphs with data provenance  
   https://www.youtube.com/watch?v=Vu1T0ozz6Og&list=PLSEiuYkICmDlpZSpWSsPjNAQhKh-raIiu
-- Built-in template tags and filters
+- Built-in template tags and filters  
   https://docs.djangoproject.com/en/3.0/ref/templates/builtins/
-- Django Authentication Video Tutorial
+- Django Authentication Video Tutorial  
   https://github.com/sibtc/django-auth-tutorial-example
-- Django - always getting False in form.is_valid()
+- Django - always getting False in form.is_valid()  
   https://groups.google.com/forum/#!topic/django-users/z5EjU2-RgtU
-- Installing django-crispy-forms
+- Installing django-crispy-forms  
   https://django-crispy-forms.readthedocs.io/en/latest/install.html
-- s4api 1.1.0
+- s4api 1.1.0  
   https://pypi.org/project/s4api/
 
 ## New Implementations for "Recurso" Epoc
