@@ -1,6 +1,6 @@
 # Web Semântica - Trabalho 1 (Época de Recurso)
 
-Book store application developed in Python3 and using SPARQL and GraphDB to deal with RDF graph data.
+Book catalog application developed in Python3 and using SPARQL and GraphDB to deal with RDF graph data.
 
 ![Book store for Web Samantic Academic Work](screenshot.png)
 
