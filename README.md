@@ -2,7 +2,7 @@
 
 Book catalog application developed in Python3 and using SPARQL and GraphDB to deal with RDF graph data.
 
-![Book store for Web Samantic Academic Work](screenshot.png)
+![Book catalog for Web Samantic Academic Work](screenshot.png)
 
 ## Pre-requisits before running the project
 
