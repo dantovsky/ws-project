@@ -10,9 +10,12 @@ Book catalog application developed in Python3 and using SPARQL and GraphDB to de
     - Create a repository named "booksguru"
     - import books.csv using Tabular(OntoRefine)
     - on isbn13 column make Edit cells >> Transform and put the value: value.replace(".", "").replace("e+12", "0")
-- Python3
-    - pip install s4api
-    - pip install django-crispy-forms
+- Python3.6
+    - sudo apt-get install python3-pip
+    - python3 -m pip install django
+    - pip3 install setuptools
+    - pip3 install s4api
+    - pip3 install django-crispy-forms
 
 ## Running this project
 
